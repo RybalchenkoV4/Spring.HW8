@@ -13,7 +13,7 @@ import java.util.Arrays;
 @Component
 public class UserActionAspect {
 
-    @Before("@annotation(TrackUserAction)")
+    @Before("@annotation(org.example.taskMaster.TrackUserAction)")
     public void logBeforeMethodExecution(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String methodName = signature.getMethod().getName();
@@ -24,7 +24,7 @@ public class UserActionAspect {
         System.out.println("Arguments: " + Arrays.toString(args));
     }
 
-    @After("@annotation(TrackUserAction)")
+    @After("@annotation(org.example.taskMaster.TrackUserAction)")
     public void logAfterMethodExecution(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String methodName = signature.getMethod().getName();
